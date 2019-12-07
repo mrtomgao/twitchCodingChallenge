@@ -1,0 +1,24 @@
+@model Game
+@{
+  var game = Model;
+}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="jumbotron">
+        <h1>@game.Name</h1>
+        <p>TwitchID @game.TwitchGameId</p>
+        <small>
+          Categories:
+          @foreach (var cat in @Model.CategorySections)
+          {
+            <kbd>@cat.Name</kbd>
+          }
+        </small>
+        <img src="@game.Boxart" class="img-rounded img-responsive" />
+      </div>
+    </div>
+  </div>
+</div>
+
+

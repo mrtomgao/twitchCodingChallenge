@@ -1,0 +1,27 @@
+@model List<Game>
+@{
+  var gameList = Model;
+}
+
+@if (gameList != null)
+{
+  <div id="GameList_Success">
+    <div class="ui cards basic eight stackable">
+      @foreach (var game in gameList)
+      {
+        <a class="card mdl" target="_blank" href="/@game.Slug">
+          <div class="image">
+            <img src="@game.Icon" alt="">
+          </div>
+          <div class="content">
+            @game.Name <br />
+            <small class="caption">
+              TwitchID: @game.TwitchGameId <br />
+              Supports Addons: @game.SupportsAddons
+            </small>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+}
